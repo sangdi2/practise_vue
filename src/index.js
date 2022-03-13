@@ -6,3 +6,11 @@ $(function(){
 $('li:even').css('background-color','pink')
 $('.box').attr('src',logo)
 })
+
+function info(target){
+    target.info='hhhhhh'
+}
+@info
+
+class person{}
+console.log(person.info)

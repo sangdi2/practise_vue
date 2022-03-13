@@ -11,7 +11,7 @@ module.exports={
     entry:path.join(__dirname,'./src/index.js'),
     output:{
         path:path.join(__dirname,'./dist'),
-        filename:'main.js'
+        filename:'js/main.js'
     },
     plugins:[htmlPlugin],
     devServer:{
@@ -24,7 +24,8 @@ module.exports={
             {
             test:/\.css$/,use:['style-loader','css-loader']
         },
-        {test:/\.jpg|png|gif$/,use:'url-loader?limit=22229'}
+        {test:/\.jpg|png|gif$/,use:'url-loader?limit=22229&outputPath=images'},
+        {test:/\.js$/,use:'babel-loader',exclude:/node_modules/}
     ]
     }
 }
