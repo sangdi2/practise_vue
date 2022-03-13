@@ -18,5 +18,13 @@ module.exports={
         open:true,
         port:8080,
         host:'127.0.0.1'
+    },
+    module:{
+        rules:[
+            {
+            test:/\.css$/,use:['style-loader','css-loader']
+        },
+        {test:/\.jpg|png|gif$/,use:'url-loader?limit=22229'}
+    ]
     }
 }
