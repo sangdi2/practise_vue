@@ -2,21 +2,24 @@ const path =require('path')
 
 const HtmlPlugin =require('html-webpack-plugin')
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 const htmlPlugin = new HtmlPlugin({
     template:'./src/index.html',
     filename:'./index.html'
 })
 module.exports={
+    devtool:'eval-source-map',
     mode:'development',
     entry:path.join(__dirname,'./src/index.js'),
     output:{
         path:path.join(__dirname,'./dist'),
         filename:'js/main.js'
     },
-    plugins:[htmlPlugin],
+    plugins:[htmlPlugin,new CleanWebpackPlugin()],
     devServer:{
         open:true,
-        port:8080,
+        port:8083,
         host:'127.0.0.1'
     },
     module:{
